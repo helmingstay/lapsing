@@ -33,3 +33,12 @@ ffmpeg -t $((60*10)) -hide_banner \
     -filter_complex "mandelbrot=s=hd480,format=yuv444p,split=4[a][b][c][d],[a]waveform=d=overlay[aa],[b][aa]vstack[V],[c]waveform=m=0:display=parade[cc],[d]vectorscope=color3[dd],[cc][dd]vstack[V2],[V][V2]hstack[fin],[fin]scale=hd720" \
     -c:v libx264 -preset slow -crf 12 out.mp4
 ```
+
+## Down-sample time (assumes 60 fps inpu)
+* Note: this re-encodes
+* Start time (```-ss```), duration (`-t`)
+* Strip audio (`-an`)
+```
+ffmpeg -r 30 -ss 1 -i input.mp4 -t 15 -an out.mp4
+```
+
