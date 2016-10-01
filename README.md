@@ -5,4 +5,5 @@
 ## Commandline tips / docs:
 
 * [ffmpeg / time-lapse encoding](ffmpeg.md)
-* [Feeback](feedback.md)
+* [file management](files.md)
+* [feeback](feedback.md)
