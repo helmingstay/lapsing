@@ -4,5 +4,5 @@
 
 ## Commandline tips / docs:
 
-* [ffmpeg / time-lapse encoding](doc.ffmpeg.md)
-* [Feeback](doc.feedback.md)
+* [ffmpeg / time-lapse encoding](ffmpeg.md)
+* [Feeback](feedback.md)
