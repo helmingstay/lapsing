@@ -1,5 +1,6 @@
 library(foreach)
 ## average sequential images with convert 
+## see http://www.imagemagick.org/Usage/color_mods/#modulate
 .dir.in = '/media/xian/VOLUME1/DCIM/tmp/'
 .dir.out = '~xian/Downloads/gopro/stars'
 ## grab all files
