@@ -1,15 +1,17 @@
-library(foreach)
 ## average sequential images with convert 
 ## see http://www.imagemagick.org/Usage/color_mods/#modulate
-.dir.in = '/media/xian/VOLUME1/DCIM/tmp/'
-.dir.out = '~xian/Downloads/gopro/stars'
+.dir.in = './stars30'
+.dir.out = './stars_high'
 ## grab all files
 .fns = Sys.glob(paste(.dir.in, pattern='*.JPG', sep='/'))
 .by=2
 ## wait every njob
 .njob = 3
 ## convert filters to apply
-.command = '-modulate 180,20 -average'
+.lighten <- 300
+.command = paste('-modulate', .lighten, '-average', sep=' ')
+## lighten and desaturate
+#.command = '-modulate 180,20 -average'
 
 ## total jobs
 .nf = length(.fns)
@@ -17,7 +19,10 @@ library(foreach)
 #.nf = 50
 ## job submission counter
 .ijob=0
-## job loop
+
+## job loop - combine images .by at a time
+## quasi-parallelism: submit to shell, 
+## blocking every .njob submissions
 for (ii in seq(from=1, to =(.nf-.by), by=.by)) {
     ## report
     cat(sprintf('##\t%2.0f%%\r', 100*(ii/.nf)))
