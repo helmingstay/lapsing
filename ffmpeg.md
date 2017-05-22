@@ -2,7 +2,7 @@
 
 * [h.264 Encoder Guide](https://trac.ffmpeg.org/wiki/Encode/H.264)
     - CRF + VBV settinge
-* [Filter docs](ffmpeg.org/ffmpeg-filters.html)
+* [Filter docs](http://ffmpeg.org/ffmpeg-filters.html)
 * [Rate control mode primer](http://slhck.info/video/2017/03/01/rate-control.html)
     - With figures!
 * [Metadata fields](https://multimedia.cx/eggs/supplying-ffmpeg-with-metadata/)
