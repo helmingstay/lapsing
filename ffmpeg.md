@@ -1,3 +1,13 @@
+## Links
+
+* [h.264 Encoder Guide](https://trac.ffmpeg.org/wiki/Encode/H.264)
+    - CRF + VBV settinge
+* [Filter docs](ffmpeg.org/ffmpeg-filters.html)
+* [Rate control mode primer](http://slhck.info/video/2017/03/01/rate-control.html)
+    - With figures!
+* [Metadata fields](https://multimedia.cx/eggs/supplying-ffmpeg-with-metadata/)
+    - E.g. `-metadata title="my title"`
+
 ## use glob to set up files 
 ```
 ffmpeg -framerate 12 \
