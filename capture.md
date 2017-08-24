@@ -5,12 +5,12 @@
 ```
 ffmpeg -f v4l2 -framerate 24 -video_size 1280x720  \
     -input_format mjpeg -i /dev/video1 \
-    -c:v libx264 -preset fast -crf 21 \
+    -c:v libx264 -preset fast -crf 23 \
     output720.mp4
 ```
 * recompress
 ```
 ffmpeg -i output720.mp4 \
-    -c:v libx264 -preset slow -crf 21 \
+    -c:v libx264 -preset slow -crf 23 \
     output720.fin.mp4
 ```
