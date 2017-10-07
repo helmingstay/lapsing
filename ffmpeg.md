@@ -18,6 +18,9 @@ ffmpeg -framerate 12 \
     out.mp4
 ```
 
+* Rotate:
+  - `-vf rotate=PI`
+
 ## mux audio, trim to shortest 
 
 * [SO link](http://stackoverflow.com/questions/11779490/how-to-add-a-new-audio-not-mixing-into-a-video-using-ffmpeg)
