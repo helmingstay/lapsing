@@ -21,6 +21,10 @@ ffmpeg -framerate 12 \
 * Rotate:
   - `-vf rotate=PI`
 
+* Crop (ex. from bottom / left)
+  - Compute dimensions: `NN=20; WW=$(($NN * 16)); HH=$(($NN * 9));` 
+  - `-vf "crop=in_w-$WW:in_h-$HH:$WW:0,scale=1920:-1" 
+
 ## mux audio, trim to shortest 
 
 * [SO link](http://stackoverflow.com/questions/11779490/how-to-add-a-new-audio-not-mixing-into-a-video-using-ffmpeg)
