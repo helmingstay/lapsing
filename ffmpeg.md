@@ -18,12 +18,18 @@ ffmpeg -framerate 12 \
     out.mp4
 ```
 
+## Common filters and editing / effects
 * Rotate:
   - `-vf rotate=PI`
-
 * Crop (ex. from bottom / left)
   - Compute dimensions: `NN=20; WW=$(($NN * 16)); HH=$(($NN * 9));` 
   - `-vf "crop=in_w-$WW:in_h-$HH:$WW:0,scale=1920:-1" 
+
+* Change speed without reencode:
+  - Grab raw stream: 
+  - `ffmpeg -i out.mp4 -c copy -f h264 out.h264`
+  - `ffmpeg -framerate 10 -i out.h264 -c copy out.new.mp4`
+
 
 ## mux audio, trim to shortest 
 
@@ -58,4 +64,5 @@ ffmpeg -t $((60*10)) -hide_banner \
 ```
 ffmpeg -r 30 -ss 1 -i input.mp4 -t 15 -an out.mp4
 ```
+
 
