@@ -21,12 +21,20 @@ ffmpeg -framerate 12 \
 ## Common filters and editing / effects
 * Rotate:
   - `-vf rotate=PI`
-* Crop (ex. from bottom / left)
+* Crop (width:height:L.edge:T.edge)
   - Compute dimensions: `NN=20; WW=$(($NN * 16)); HH=$(($NN * 9));` 
   - `-vf "crop=in_w-$WW:in_h-$HH:$WW:0,scale=1920:-1" 
+* Time blend:
+  - `-vf "tblend=average`
+* Drop frames:
+  - `framestep=2,setpts=0.5*PTS`
+* Rotate 180deg:
+  - `rotate=PI`
+  - `transpose=2,transpose=2`
 
 * Change speed without reencode:
-  - Grab raw stream: 
+  - [Ref](https://stackoverflow.com/questions/45462731/using-ffmpeg-to-change-framerate)
+  - Grab raw stream, then change (pts errors): 
   - `ffmpeg -i out.mp4 -c copy -f h264 out.h264`
   - `ffmpeg -framerate 10 -i out.h264 -c copy out.new.mp4`
 
