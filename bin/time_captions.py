@@ -1,9 +1,13 @@
 ## Use jpg exif info to create .srt subtitles
 ## HH:MM:SS
+import argparse
 import exifread
 import glob
 import re
-from warnings import warn
+
+parser = argparse.ArgumentParser(description='Create timebase captions from image exif data')
+parser.add_argument('fps', help='Frames per second', type=int)
+args = parser.parse_args()
 
 ## hh:mm:ss
 hh_mm = re.compile(r" (\d+:\d+):\d+$")
@@ -11,8 +15,7 @@ hh_mm = re.compile(r" (\d+:\d+):\d+$")
 fnPic = glob.glob("./*.JPG")
 
 ## fps
-rate = 20
-warn("Timebase is %d fps" % rate)
+rate = args.fps
 
 ## turn frame into timecode
 def mkLoc(loc):
